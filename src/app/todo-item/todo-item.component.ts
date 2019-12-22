@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
-  tests = [{ item: 1 }, { item: 2 }];
-
+  @Input() data: Task;
+  @Output() todoItemCompleteChange = new EventEmitter();
+  @Output() removeTodoItem = new EventEmitter();
+  @Output() updateTodoItem = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}

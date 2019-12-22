@@ -1,8 +1,11 @@
 <div class="container">
   <h2>Todo</h2>
-  {{taskService.taskList | json}}
   <div>
-    <form><input nz-input type="text"></form>
+    <form (ngSubmit)="createOrUpdateItem()"><input name="title" nz-input type="text" [(ngModel)]="form.title">
+    </form>
   </div>
-  <app-todo-item></app-todo-item>
+  <app-todo-item (updateTodoItem)="updateItem($event)" (removeTodoItem)="removeItem($event)"
+    (todoItemCompleteChange)="setCompleteStatus(item.id,$event)" *ngFor="let item of taskService.taskList"
+    [data]="item">
+  </app-todo-item>
 </div>

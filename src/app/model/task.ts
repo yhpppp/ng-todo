@@ -1,5 +1,5 @@
 class Task {
-  title: string;
+  title?: string;
   id?: number;
   completed?: boolean;
 }

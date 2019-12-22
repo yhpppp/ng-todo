@@ -7,3 +7,9 @@
 .todo-item {
   margin: 1rem 0;
 }
+.no-select span:nth-child(2) {
+  user-select: none;
+}
+.ant-checkbox-wrapper {
+  width: 100%;
+}

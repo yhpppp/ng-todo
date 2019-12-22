@@ -1,9 +1,11 @@
-<div nz-row nzType="flex" nzAlign="middle" class="todo-item" *ngFor="let test of tests">
-  <div nz-col nzSpan="12"><label nz-checkbox>{{test.item}}</label></div>
-  <div nz-col nzSpan="12">
+<div nz-row nzType="flex" nzAlign="middle" class="todo-item">
+  <div nz-col nzSpan="18"><label nz-checkbox [nzChecked]="data.completed" class="no-select"
+      (ngModelChange)="todoItemCompleteChange.emit($event)" [(ngModel)]="data.completed">{{data.title}}</label>
+  </div>
+  <div nz-col nzSpan="6">
     <div nz-row nzType="flex" nzJustify="end">
-      <button nz-button nzType="primary">更新</button>
-      <button nz-button nzType="dange">删除</button>
+      <button nz-button nzType="primary" (click)="updateTodoItem.emit(data.id)">更新</button>
+      <button nz-button nzType="dange" (click)="removeTodoItem.emit(data.id)">删除</button>
     </div>
   </div>
 
