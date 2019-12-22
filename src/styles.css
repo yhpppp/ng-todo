@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  max-width: 600px;
+  min-width: 600px;
+  margin: 100px auto;
+}
+.todo-item {
+  margin: 1rem 0;
+}
